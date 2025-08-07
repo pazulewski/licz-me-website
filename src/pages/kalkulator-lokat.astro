@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AdSlot from '../components/AdSlot.astro';
+const pageTitle = "Kalkulator Zysku z Lokaty | Licz.me";
+const pageDesc = "Oblicz zysk z lokaty bankowej po opodatkowaniu. Sprawdź, ile zarobisz na swoich oszczędnościach, uwzględniając podatek Belki.";
+---
+<Layout title={pageTitle} description={pageDesc}>
+    <article>
+        <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Kalkulator Zysku z Lokaty</h1>
+        <p class="text-lg text-slate-600 mb-6">Oblicz, ile zarobisz na lokacie bankowej. Kalkulator uwzględnia kapitalizację odsetek oraz podatek od zysków kapitałowych (tzw. podatek Belki).</p>
+        
+        <AdSlot id="calculator-1" />
+
+        <form id="kalkulator-lokat-form" class="bg-white p-6 rounded-lg shadow-md">
+            <div class="grid md:grid-cols-3 gap-6">
+                <div>
+                    <label for="lokata-kwota" class="block text-sm font-medium text-slate-700 mb-1">Kwota lokaty (PLN)</label>
+                    <input type="number" id="lokata-kwota" class="w-full p-3 border border-slate-300 rounded-md" placeholder="np. 10000" required>
+                </div>
+                <div>
+                    <label for="lokata-okres" class="block text-sm font-medium text-slate-700 mb-1">Okres (miesiące)</label>
+                    <input type="number" id="lokata-okres" class="w-full p-3 border border-slate-300 rounded-md" placeholder="np. 12" required>
+                </div>
+                <div>
+                    <label for="lokata-oprocentowanie" class="block text-sm font-medium text-slate-700 mb-1">Oprocentowanie w skali roku (%)</label>
+                    <input type="number" id="lokata-oprocentowanie" step="0.01" class="w-full p-3 border border-slate-300 rounded-md" placeholder="np. 5.5" required>
+                </div>
+            </div>
+            <div class="mt-6">
+                <button type="submit" class="w-full md:w-auto bg-indigo-600 text-white font-bold py-3 px-6 rounded-md hover:bg-indigo-700">Oblicz zysk</button>
+            </div>
+            <div id="lokata-wynik" class="mt-6 border-t pt-6 hidden">
+                <div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Zysk netto (na rękę):</h3>
+                    <p class="text-3xl font-extrabold text-indigo-600" id="lokata-wynik-zysk"></p>
+                </div>
+            </div>
+        </form>
+
+        <AdSlot id="calculator-2" />
+        
+        <h2 class="text-2xl font-bold text-slate-800 mt-12 mb-4">Podatek od zysków kapitałowych</h2>
+        <p class="text-slate-600 mb-4">Zysk wypracowany przez lokatę jest objęty 19% podatkiem od zysków kapitałowych, potocznie zwanym "podatkiem Belki". Nasz kalkulator automatycznie odejmuje tę kwotę, pokazując realny zysk, który trafi do Twojej kieszeni po zakończeniu lokaty.</p>
+
+        <AdSlot id="calculator-3" />
+    </article>
+</Layout>
