@@ -1,21 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Tytuł i opis będą pochodzić z każdej podstrony osobno -->
     <title>{Astro.props.title}</title>
     <meta name="description" content={Astro.props.description}>
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-    
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
         #mobile-menu { transition: transform 0.3s ease-in-out; }
@@ -24,38 +18,25 @@
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
-
     <div class="min-h-screen flex flex-col">
-        <!-- NAGŁÓWEK -->
         <header class="bg-white shadow-sm sticky top-0 z-20">
             <div class="container mx-auto px-4">
                 <div class="flex justify-between items-center py-4">
-                    <a href="/" class="text-2xl font-extrabold text-slate-900 tracking-tight">
-                        Licz.<span class="text-indigo-600">me</span>
-                    </a>
+                    <a href="/" class="text-2xl font-extrabold text-slate-900 tracking-tight">Licz.<span class="text-indigo-600">me</span></a>
                     <button id="menu-btn" class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                     </button>
                 </div>
             </div>
         </header>
-
-        <!-- MENU HAMBURGERA -->
         <div id="mobile-menu" class="fixed top-0 left-0 w-72 h-full bg-white shadow-lg z-30 transform -translate-x-full overflow-y-auto">
             <div class="p-4"><h2 class="text-lg font-bold mb-2 text-slate-700">Wszystkie kalkulatory</h2></div>
-            <nav id="main-nav" class="flex flex-col">
-                <!-- Nawigacja generowana przez JS -->
-            </nav>
+            <nav id="main-nav" class="flex flex-col"></nav>
         </div>
         <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-20 hidden"></div>
-
-        <!-- GŁÓWNA TREŚĆ (miejsce na zawartość podstrony) -->
         <main class="flex-grow container mx-auto p-4 md:p-8">
-            <!-- Tutaj Astro wstrzyknie zawartość każdej podstrony -->
             <slot />
         </main>
-
-        <!-- STOPKA -->
         <footer class="bg-white mt-12">
             <div class="container mx-auto px-4 py-6 text-center text-slate-500">
                 <p>&copy; <span id="footer-year"></span> Licz.me - Wszelkie prawa zastrzeżone.</p>
@@ -63,8 +44,8 @@
             </div>
         </footer>
     </div>
-    
-    <!-- Główny plik JavaScript dla całej strony -->
-    <script src="/scripts/main.js"></script>
+    <!-- ZMIANA: Skrypt jest teraz ładowany z folderu src -->
+    <script src="../scripts/main.js"></script>
 </body>
 </html>
+
