@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AdSlot from '../components/AdSlot.astro';
+const pageTitle = "Kalkulator Walutowy - Przelicznik Walut Online | Licz.me";
+const pageDesc = "Aktualny przelicznik walut. Konwertuj PLN, EUR, USD, GBP i inne waluty po kursach na żywo. Szybki i dokładny kalkulator walutowy.";
+---
+<Layout title={pageTitle} description={pageDesc}>
+    <article>
+        <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Kalkulator Walutowy - Przelicznik Walut Online</h1>
+        <p class="text-lg text-slate-600 mb-6">Przeliczaj waluty po aktualnych kursach. Nasz kalkulator korzysta z danych na żywo, aby zapewnić jak najdokładniejsze wyniki.</p>
+        
+        <AdSlot id="calculator-1" />
+
+        <form id="kalkulator-walut-form" class="bg-white p-6 rounded-lg shadow-md">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-end">
+                <div>
+                    <label for="waluty-kwota" class="block text-sm font-medium text-slate-700 mb-1">Kwota</label>
+                    <input type="number" id="waluty-kwota" class="w-full p-3 border border-slate-300 rounded-md" value="100" required>
+                </div>
+                <div>
+                    <label for="waluty-z" class="block text-sm font-medium text-slate-700 mb-1">Z waluty</label>
+                    <select id="waluty-z" class="w-full p-3 border border-slate-300 rounded-md bg-white"></select>
+                </div>
+                <div>
+                    <label for="waluty-na" class="block text-sm font-medium text-slate-700 mb-1">Na walutę</label>
+                    <select id="waluty-na" class="w-full p-3 border border-slate-300 rounded-md bg-white"></select>
+                </div>
+                <div>
+                    <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-md hover:bg-indigo-700">Przelicz</button>
+                </div>
+            </div>
+            <div id="waluty-wynik" class="mt-6 border-t pt-6 hidden">
+                <p id="waluty-wynik-tekst" class="text-2xl md:text-3xl font-bold text-slate-800 text-center"></p>
+            </div>
+            <div id="waluty-ladowanie" class="mt-4 text-center text-slate-500">
+                <p>Pobieranie aktualnych kursów...</p>
+            </div>
+            <div id="waluty-error" class="mt-4 text-center text-red-500 hidden">
+                <p>Nie udało się pobrać kursów walut. Spróbuj ponownie później.</p>
+            </div>
+        </form>
+
+        <AdSlot id="calculator-2" />
+        
+        <h2 class="text-2xl font-bold text-slate-800 mt-12 mb-4">Skąd pochodzą dane o kursach walut?</h2>
+        <p class="text-slate-600 mb-4">Nasz kalkulator walutowy integruje się z zewnętrznym dostawcą danych finansowych (API), aby pobierać kursy wymiany w czasie zbliżonym do rzeczywistego. Dzięki temu masz pewność, że przeliczenia są aktualne. Pamiętaj jednak, że kursy w kantorach stacjonarnych lub bankach mogą się nieznacznie różnić ze względu na marżę.</p>
+        
+        <AdSlot id="calculator-3" />
+    </article>
+</Layout>
