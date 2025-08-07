@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AdSlot from '../components/AdSlot.astro';
+const pageTitle = "Kalkulator 1RM - Oblicz Maksymalny Ciężar | Licz.me";
+const pageDesc = "Oblicz swój maksymalny ciężar na jedno powtórzenie (One-Rep Max) w wyciskaniu, przysiadzie czy martwym ciągu. Poznaj swój prawdziwy maks.";
+---
+<Layout title={pageTitle} description={pageDesc}>
+    <article>
+        <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Kalkulator 1RM: Oblicz Swój Maksymalny Ciężar</h1>
+        <p class="text-lg text-slate-600 mb-6">Chcesz poznać swój prawdziwy maks w wyciskaniu na klatę, martwym ciągu czy przysiadzie? Wprowadź ciężar i liczbę wykonanych powtórzeń, aby oszacować swój 1RM (One-Rep Max).</p>
+        
+        <AdSlot id="calculator-1" />
+
+        <form id="kalkulator-1rm-form" class="bg-white p-6 rounded-lg shadow-md">
+            <div class="grid md:grid-cols-3 gap-6">
+                <div>
+                    <label for="rm-ciezar" class="block text-sm font-medium text-slate-700 mb-1">Podniesiony ciężar (kg)</label>
+                    <input type="number" id="rm-ciezar" class="w-full p-3 border border-slate-300 rounded-md" placeholder="np. 100" required>
+                </div>
+                <div>
+                    <label for="rm-powtorzenia" class="block text-sm font-medium text-slate-700 mb-1">Liczba powtórzeń</label>
+                    <input type="number" id="rm-powtorzenia" class="w-full p-3 border border-slate-300 rounded-md" placeholder="np. 5" required>
+                </div>
+                <div class="flex items-end">
+                    <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-md hover:bg-indigo-700">Oblicz 1RM</button>
+                </div>
+            </div>
+            <div id="rm-wynik" class="mt-6 border-t pt-6 hidden">
+                <h3 class="text-xl font-bold text-slate-800 mb-2">Twój szacowany 1RM:</h3>
+                <p class="text-4xl font-extrabold text-indigo-600" id="rm-wynik-wartosc"></p>
+            </div>
+        </form>
+
+        <AdSlot id="calculator-2" />
+        
+        <h2 class="text-2xl font-bold text-slate-800 mt-12 mb-4">Czym jest 1RM?</h2>
+        <p class="text-slate-600 mb-4">1RM (One-Repetition Maximum) to maksymalny ciężar, jaki jesteś w stanie podnieść w danym ćwiczeniu na jedno, pełne powtórzenie z prawidłową techniką. Znajomość 1RM jest kluczowa w planowaniu treningu siłowego, ponieważ pozwala precyzyjnie dobierać obciążenia procentowe do założonych celów (np. budowa siły, hipertrofia, wytrzymałość).</p>
+
+        <AdSlot id="calculator-3" />
+    </article>
+</Layout>
+
