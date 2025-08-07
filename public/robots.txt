@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://licz.me/sitemap-0.xml
+Sitemap: https://www.licz.me/sitemap-0.xml
