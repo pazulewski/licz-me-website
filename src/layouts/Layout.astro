@@ -14,8 +14,7 @@
         .nav-category { padding: 8px 12px; font-size: 0.8rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #e2e8f0; }
         .ad-placeholder { display: flex; align-items: center; justify-content: center; background-color: #e2e8f0; border-radius: 0.5rem; color: #64748b; font-size: 0.875rem; min-height: 90px; border: 2px dashed #cbd5e1; }
     </style>
-    <!-- ZMIANA: Skrypt został przeniesiony tutaj z atrybutem 'defer' -->
-    <script src="../scripts/main.js" defer></script>
+    <!-- ZMIANA: Usunęliśmy skrypt z sekcji <head> -->
 </head>
 <body class="bg-slate-50 text-slate-800">
     <div class="min-h-screen flex flex-col">
@@ -44,5 +43,10 @@
             </div>
         </footer>
     </div>
+    <!-- ZMIANA: Prawidłowy sposób dołączenia skryptu, który działa po stronie klienta -->
+    <script>
+        import "../scripts/main.js";
+    </script>
 </body>
 </html>
+
