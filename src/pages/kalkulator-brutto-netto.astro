@@ -2,12 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import AdSlot from '../components/AdSlot.astro';
 const pageTitle = "Kalkulator Wynagrodzeń Brutto Netto 2025 (Umowa o Pracę) | Licz.me";
-const pageDesc = "Oblicz swoje wynagrodzenie netto z kwoty brutto lub brutto z netto dla umowy o pracę. Szybki i dokładny przelicznik płac działający w obie strony.";
+const pageDesc = "Oblicz swoje wynagrodzenie netto z kwoty brutto lub brutto z netto dla umowy o pracę. Szybki i dokładny przelicznik płac działający w obie strony, uwzględniający Polski Ład.";
 ---
 <Layout title={pageTitle} description={pageDesc}>
     <article>
-        <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Kalkulator Wynagrodzeń Brutto Netto 2025 (UoP)</h1>
-        <p class="text-lg text-slate-600 mb-6">Oblicz swoje wynagrodzenie "na rękę" (netto) z kwoty brutto lub oszacuj kwotę brutto na podstawie oczekiwanego wynagrodzenia netto. Kalkulator działa w obie strony.</p>
+        <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Kalkulator Wynagrodzeń Brutto Netto 2025 (Umowa o Pracę)</h1>
+        <p class="text-lg text-slate-600 mb-6">Nasz zaawansowany kalkulator wynagrodzeń brutto-netto to najlepsze narzędzie do obliczenia Twojej pensji "na rękę". Wprowadź kwotę brutto, aby zobaczyć, ile zarobisz netto, lub podaj kwotę netto, a my oszacujemy, ile powinno wynosić Twoje wynagrodzenie brutto. Kalkulator jest aktualny na rok 2025 i uwzględnia zmiany wprowadzone przez Polski Ład.</p>
 
         <AdSlot id="calculator-1" />
 
@@ -35,9 +35,87 @@ const pageDesc = "Oblicz swoje wynagrodzenie netto z kwoty brutto lub brutto z n
 
         <AdSlot id="calculator-2" />
 
-        <h2 class="text-2xl font-bold text-slate-800 mt-12 mb-4">Jak działa kalkulator wynagrodzeń?</h2>
-        <p class="text-slate-600 mb-4">Nasz kalkulator symuluje listę płac pracownika. Od podanej kwoty brutto odejmowane są kolejno składki na ubezpieczenia społeczne (emerytalne, rentowe, chorobowe), następnie składka zdrowotna i na końcu zaliczka na podatek dochodowy (PIT). W przypadku obliczeń w drugą stronę, algorytm iteracyjnie poszukuje kwoty brutto, która po wszystkich odliczeniach da wskazane wynagrodzenie netto.</p>
-        
+        <h2 class="text-2xl font-bold text-slate-800 mt-12 mb-4">Jak Działa Nasz Kalkulator Płac?</h2>
+        <p class="text-slate-600 mb-4">Nasz kalkulator to zaawansowany symulator listy płac. Gdy podajesz kwotę brutto, algorytm precyzyjnie odejmuje wszystkie obowiązkowe obciążenia, takie jak składki na ubezpieczenia społeczne (emerytalne, rentowe, chorobowe), składkę zdrowotną oraz zaliczkę na podatek dochodowy (PIT), uwzględniając kwotę wolną od podatku i progi podatkowe. W przypadku obliczeń w drugą stronę (netto na brutto), nasz algorytm iteracyjnie, z dużą dokładnością, poszukuje takiej kwoty brutto, która po wszystkich odliczeniach da wskazane przez Ciebie wynagrodzenie netto.</p>
+
+        <h2 class="text-2xl font-bold text-slate-800 mt-12 mb-4">Składowe Wynagrodzenia Brutto – Co jest Czym?</h2>
+        <p class="text-slate-600 mb-4">Twoja pensja brutto to całkowita kwota wynagrodzenia przed potrąceniami. Składa się na nią kilka kluczowych elementów, które pomniejszają Twoją wypłatę "na rękę":</p>
+        <ul class="list-disc list-inside text-slate-600 space-y-2">
+            <li><strong>Składki na ubezpieczenia społeczne (ZUS):</strong> Finansowane przez Ciebie składki na ubezpieczenie emerytalne (9,76%), rentowe (1,5%) oraz chorobowe (2,45%). Zabezpieczają Twoją przyszłą emeryturę i świadczenia w razie choroby.</li>
+            <li><strong>Składka na ubezpieczenie zdrowotne (NFZ):</strong> Wynosi 9% od podstawy wymiaru i gwarantuje Ci dostęp do publicznej opieki zdrowotnej.</li>
+            <li><strong>Zaliczka na podatek dochodowy (PIT):</strong> Podatek odprowadzany do Urzędu Skarbowego. Jego wysokość zależy od Twoich dochodów i obowiązujących progów podatkowych (obecnie 12% i 32%).</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-slate-800 mt-12 mb-4">Wpływ Polskiego Ładu na Wynagrodzenie</h2>
+        <p class="text-slate-600 mb-4">Reformy podatkowe znane jako "Polski Ład" znacząco zmieniły sposób obliczania wynagrodzeń netto. Najważniejsze zmiany, które nasz kalkulator uwzględnia, to podniesienie kwoty wolnej od podatku do 30 000 zł rocznie oraz zwiększenie progu podatkowego do 120 000 zł. Dla większości pracowników oznaczało to wyższe wynagrodzenie netto, ponieważ zaliczka na podatek dochodowy jest niższa.</p>
+
         <AdSlot id="calculator-3" />
+
+        <h2 class="text-2xl font-bold text-slate-800 mt-12 mb-4">FAQ - Najczęściej Zadawane Pytania</h2>
+        <div class="space-y-4">
+            <div>
+                <h3 class="font-bold text-slate-700">1. Czy ten kalkulator jest aktualny na rok 2025?</h3>
+                <p class="text-slate-600">Tak, nasz kalkulator jest na bieżąco aktualizowany i uwzględnia wszystkie stawki składek i progi podatkowe obowiązujące w 2025 roku.</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-slate-700">2. Czym różni się kwota brutto od netto?</h3>
+                <p class="text-slate-600">Kwota brutto to Twoje pełne wynagrodzenie przed potrąceniem składek i podatków. Kwota netto (tzw. "na rękę") to pieniądze, które faktycznie otrzymujesz na swoje konto bankowe po odliczeniu wszystkich obciążeń.</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-slate-700">3. Czy kalkulator uwzględnia Pracownicze Plany Kapitałowe (PPK)?</h3>
+                <p class="text-slate-600">Nie, w obecnej wersji kalkulator przedstawia standardowe wynagrodzenie bez uwzględnienia dobrowolnych wpłat na PPK, które mogą dodatkowo pomniejszyć kwotę netto.</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-slate-700">4. Dlaczego obliczenie brutto z netto jest szacunkowe?</h3>
+                <p class="text-slate-600">Obliczenie kwoty brutto na podstawie netto jest matematycznie bardziej skomplikowane i wymaga zastosowania przybliżeń, ponieważ niektóre składniki (np. składka zdrowotna) zależą od innych, już odliczonych kwot. Nasz algorytm zapewnia jednak bardzo wysoką dokładność, wystarczającą do celów informacyjnych.</p>
+            </div>
+        </div>
     </article>
 </Layout>
+
+<script>
+    // ZMIANA: Logika kalkulatora jest teraz częścią tej strony.
+    document.addEventListener('DOMContentLoaded', function() {
+        const bnForm = document.getElementById('kalkulator-brutto-netto-form');
+        if (bnForm) {
+            const kwotaInput = document.getElementById('bn-kwota');
+            const wynikDiv = document.getElementById('bn-wynik');
+            const wynikText = document.getElementById('bn-wynik-tekst');
+            const trybSelect = document.getElementById('bn-tryb');
+            bnForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const kwota = parseFloat(kwotaInput.value);
+                const tryb = trybSelect.value;
+                if (isNaN(kwota) || kwota <= 0) return;
+                let wynik = 0, opis = '';
+                if (tryb === 'brutto-netto') {
+                    const s_emerytalna = kwota * 0.0976, s_rentowa = kwota * 0.015, s_chorobowa = kwota * 0.0245;
+                    const zus = s_emerytalna + s_rentowa + s_chorobowa;
+                    const podstawa_zdrowotna = kwota - zus;
+                    const s_zdrowotna = podstawa_zdrowotna * 0.09;
+                    const podstawa_opodatkowania = Math.round(podstawa_zdrowotna - 250);
+                    const zaliczka_pit = (podstawa_opodatkowania * 0.12) - 300;
+                    wynik = kwota - zus - s_zdrowotna - Math.max(0, zaliczka_pit);
+                    opis = `Twoje wynagrodzenie netto wynosi: <strong>${wynik.toFixed(2)} PLN</strong>`;
+                } else {
+                    let bruttoGuess = kwota * 1.4;
+                    for (let i = 0; i < 30; i++) {
+                        const s_emerytalna = bruttoGuess * 0.0976, s_rentowa = bruttoGuess * 0.015, s_chorobowa = bruttoGuess * 0.0245;
+                        const zus = s_emerytalna + s_rentowa + s_chorobowa;
+                        const podstawa_zdrowotna = bruttoGuess - zus;
+                        const s_zdrowotna = podstawa_zdrowotna * 0.09;
+                        const podstawa_opodatkowania = Math.round(podstawa_zdrowotna - 250);
+                        const zaliczka_pit = (podstawa_opodatkowania * 0.12) - 300;
+                        const nettoCalculated = bruttoGuess - zus - s_zdrowotna - Math.max(0, zaliczka_pit);
+                        if (Math.abs(nettoCalculated - kwota) < 0.01) break;
+                        bruttoGuess = bruttoGuess * (kwota / nettoCalculated);
+                    }
+                    wynik = bruttoGuess;
+                    opis = `Szacunkowe wynagrodzenie brutto wynosi: <strong>${wynik.toFixed(2)} PLN</strong>`;
+                }
+                wynikText.innerHTML = opis;
+                wynikDiv.classList.remove('hidden');
+            });
+        }
+    });
+</script>
