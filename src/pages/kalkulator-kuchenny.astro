@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AdSlot from '../components/AdSlot.astro';
+const pageTitle = "Kalkulator Kuchenny - Przelicznik Miar i Wag | Licz.me";
+const pageDesc = "Szybki przelicznik kuchenny. Konwertuj szklanki na gramy, łyżki na mililitry i inne popularne jednostki używane w kuchni.";
+---
+<Layout title={pageTitle} description={pageDesc}>
+    <article>
+        <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Kalkulator Kuchenny</h1>
+        <p class="text-lg text-slate-600 mb-6">Masz przepis w szklankach, a wagę w gramach? Ten prosty przelicznik pomoże Ci szybko zamienić najpopularniejsze jednostki kuchenne.</p>
+        
+        <AdSlot id="calculator-1" />
+
+        <form id="kalkulator-kuchenny-form" class="bg-white p-6 rounded-lg shadow-md">
+            <div class="grid md:grid-cols-3 gap-6 items-end">
+                <div>
+                    <label for="kuch-ilosc" class="block text-sm font-medium text-slate-700 mb-1">Ilość</label>
+                    <input type="number" step="any" id="kuch-ilosc" class="w-full p-3 border border-slate-300 rounded-md" placeholder="np. 1.5" required>
+                </div>
+                <div>
+                    <label for="kuch-jednostka" class="block text-sm font-medium text-slate-700 mb-1">Co przeliczasz?</label>
+                    <select id="kuch-jednostka" class="w-full p-3 border border-slate-300 rounded-md bg-white">
+                        <option value="maka_szklanka">Szklanki mąki (na gramy)</option>
+                        <option value="cukier_szklanka">Szklanki cukru (na gramy)</option>
+                        <option value="olej_szklanka">Szklanki oleju (na ml)</option>
+                        <option value="woda_szklanka">Szklanki wody (na ml)</option>
+                        <option value="lyzka">Łyżki stołowe (na ml)</option>
+                        <option value="lyzeczka">Łyżeczki (na ml)</option>
+                    </select>
+                </div>
+                <div>
+                    <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-md hover:bg-indigo-700">Przelicz</button>
+                </div>
+            </div>
+            <div id="kuch-wynik" class="mt-6 border-t pt-6 hidden">
+                <p id="kuch-wynik-tekst" class="text-2xl font-bold text-center text-indigo-600"></p>
+            </div>
+        </form>
+
+        <AdSlot id="calculator-2" />
+        
+        <h2 class="text-2xl font-bold text-slate-800 mt-12 mb-4">Przybliżone wartości</h2>
+        <p class="text-slate-600 mb-4">Pamiętaj, że przeliczenia objętości na wagę (np. szklanki na gramy) są zawsze przybliżone. Waga jednego kubka mąki może się różnić w zależności od jej rodzaju i stopnia ubicia. Dla precyzyjnych przepisów cukierniczych zawsze najlepiej jest używać wagi kuchennej.</p>
+
+        <AdSlot id="calculator-3" />
+    </article>
+</Layout>
