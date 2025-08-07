@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AdSlot from '../components/AdSlot.astro';
+const pageTitle = "Kalkulator Tempa Biegu | Licz.me";
+const pageDesc = "Oblicz swoje tempo biegania, dystans lub czas na podstawie pozostałych danych. Niezbędne narzędzie dla każdego biegacza.";
+---
+<Layout title={pageTitle} description={pageDesc}>
+    <article>
+        <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Kalkulator Tempa Biegu</h1>
+        <p class="text-lg text-slate-600 mb-6">Oblicz swoje tempo biegu, dystans lub czas. Wypełnij dwa z trzech pól, aby obliczyć brakującą wartość.</p>
+        
+        <AdSlot id="calculator-1" />
+
+        <form id="kalkulator-tempa-biegu-form" class="bg-white p-6 rounded-lg shadow-md">
+            <div class="grid md:grid-cols-3 gap-6">
+                <div>
+                    <label for="bieg-dystans" class="block text-sm font-medium text-slate-700 mb-1">Dystans (km)</label>
+                    <input type="number" step="any" id="bieg-dystans" class="w-full p-3 border border-slate-300 rounded-md" placeholder="np. 10">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Czas (GG:MM:SS)</label>
+                    <div class="flex gap-2">
+                        <input type="number" id="bieg-godziny" class="w-1/3 p-3 border border-slate-300 rounded-md" placeholder="GG">
+                        <input type="number" id="bieg-minuty" class="w-1/3 p-3 border border-slate-300 rounded-md" placeholder="MM">
+                        <input type="number" id="bieg-sekundy" class="w-1/3 p-3 border border-slate-300 rounded-md" placeholder="SS">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Tempo (min/km)</label>
+                    <div class="flex gap-2">
+                        <input type="number" id="bieg-tempo-min" class="w-1/2 p-3 border border-slate-300 rounded-md" placeholder="MM">
+                        <input type="number" id="bieg-tempo-sek" class="w-1/2 p-3 border border-slate-300 rounded-md" placeholder="SS">
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6">
+                <button type="submit" class="w-full md:w-auto bg-indigo-600 text-white font-bold py-3 px-6 rounded-md hover:bg-indigo-700">Oblicz</button>
+            </div>
+            <div id="bieg-wynik" class="mt-6 border-t pt-6 hidden">
+                <h3 class="text-xl font-bold text-slate-800 mb-2">Wynik:</h3>
+                <p class="text-2xl font-bold text-indigo-600" id="bieg-wynik-tekst"></p>
+            </div>
+        </form>
+
+        <AdSlot id="calculator-2" />
+        
+        <h2 class="text-2xl font-bold text-slate-800 mt-12 mb-4">Jak korzystać z kalkulatora biegowego?</h2>
+        <p class="text-slate-600 mb-4">To proste! Wypełnij dwie dowolne kategorie, a trzecia zostanie obliczona automatycznie. Na przykład, jeśli chcesz poznać swoje tempo, wpisz dystans, który przebiegłeś i czas, w jakim to zrobiłeś. Jeśli planujesz bieg na 10 km w tempie 5:30 min/km, wpisz te wartości, a kalkulator pokaże Ci szacowany czas ukończenia biegu.</p>
+
+        <AdSlot id="calculator-3" />
+    </article>
+</Layout>
+
