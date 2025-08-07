@@ -6,7 +6,7 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   // WAŻNE: Podaj tutaj adres swojej strony
-  site: 'https://licz.me',
+  site: 'https://www.licz.me',
   integrations: [tailwind(), sitemap()]
 });
 
