@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AdSlot from '../components/AdSlot.astro';
+const pageTitle = "Kalkulator Zdolności Kredytowej | Licz.me";
+const pageDesc = "Oszacuj swoją zdolność kredytową. Sprawdź, na jak wysoki kredyt hipoteczny możesz liczyć na podstawie swoich dochodów i wydatków.";
+---
+<Layout title={pageTitle} description={pageDesc}>
+    <article>
+        <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Kalkulator Zdolności Kredytowej</h1>
+        <p class="text-lg text-slate-600 mb-6">Sprawdź orientacyjną wysokość kredytu, jaki możesz otrzymać. Wprowadź swoje miesięczne dochody, wydatki i zobowiązania, aby oszacować swoją zdolność kredytową.</p>
+        
+        <AdSlot id="calculator-1" />
+
+        <form id="kalkulator-zdolnosci-kredytowej-form" class="bg-white p-6 rounded-lg shadow-md">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <label for="zk-dochod" class="block text-sm font-medium text-slate-700 mb-1">Miesięczny dochód netto gospodarstwa</label>
+                    <input type="number" id="zk-dochod" class="w-full p-3 border border-slate-300 rounded-md" placeholder="np. 8000" required>
+                </div>
+                <div>
+                    <label for="zk-wydatki" class="block text-sm font-medium text-slate-700 mb-1">Stałe miesięczne wydatki (bez rat)</label>
+                    <input type="number" id="zk-wydatki" class="w-full p-3 border border-slate-300 rounded-md" placeholder="np. 2500" required>
+                </div>
+                <div>
+                    <label for="zk-raty" class="block text-sm font-medium text-slate-700 mb-1">Suma rat innych kredytów</label>
+                    <input type="number" id="zk-raty" class="w-full p-3 border border-slate-300 rounded-md" placeholder="np. 500">
+                </div>
+                <div>
+                    <label for="zk-osoby" class="block text-sm font-medium text-slate-700 mb-1">Liczba osób w gospodarstwie</label>
+                    <input type="number" id="zk-osoby" class="w-full p-3 border border-slate-300 rounded-md" value="1" required>
+                </div>
+            </div>
+            <div class="mt-6">
+                <button type="submit" class="w-full md:w-auto bg-indigo-600 text-white font-bold py-3 px-6 rounded-md hover:bg-indigo-700">Oblicz zdolność</button>
+            </div>
+            <div id="zk-wynik" class="mt-6 border-t pt-6 hidden">
+                <h3 class="text-xl font-bold text-slate-800 mb-2">Twoja szacunkowa zdolność kredytowa:</h3>
+                <p class="text-4xl font-extrabold text-indigo-600" id="zk-wynik-zdolnosc"></p>
+                <p class="text-sm text-slate-500 mt-2">Powyższa kwota jest symulacją i nie stanowi oferty bankowej.</p>
+            </div>
+        </form>
+
+        <AdSlot id="calculator-2" />
+        
+        <h2 class="text-2xl font-bold text-slate-800 mt-12 mb-4">Jak banki liczą zdolność kredytową?</h2>
+        <p class="text-slate-600 mb-4">Każdy bank ma własne, skomplikowane algorytmy, ale podstawowa zasada jest podobna. Bank analizuje Twoje dochody i odejmuje od nich stałe koszty życia (oszacowane na podstawie liczby osób w gospodarstwie domowym) oraz wszystkie Twoje obecne zobowiązania (inne kredyty, limity na kartach). Kwota, która pozostaje, to Twoja "nadwyżka finansowa", na podstawie której bank szacuje, jak wysoką ratę jesteś w stanie bezpiecznie spłacać.</p>
+
+        <AdSlot id="calculator-3" />
+    </article>
+</Layout>
