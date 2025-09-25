@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import AdSlot from '../components/AdSlot.astro';
-const pageTitle = "Kalkulator Spalania Paliwa i Kosztu Podróży | Licz.me";
-const pageDesc = "Oblicz średnie spalanie l/100km oraz koszt paliwa na dowolnej trasie. Prosty kalkulator zużycia paliwa dla Twojego samochodu.";
+const pageTitle = "Kalkulator Spalania Paliwa: Oblicz Zużycie l/100km i Koszt | Licz.me";
+const pageDesc = "Oblicz średnie spalanie paliwa (l/100km) i koszt przejazdu. Wprowadź dystans, ilość zatankowanego paliwa i cenę, aby sprawdzić, ile pali Twój samochód.";
 ---
 <Layout title={pageTitle} description={pageDesc}>
     <article>
@@ -51,4 +51,5 @@ const pageDesc = "Oblicz średnie spalanie l/100km oraz koszt paliwa na dowolnej
         <AdSlot id="calculator-3" />
     </article>
 </Layout>
+<script src="/src/scripts/calculators/spalanie-paliwa.js"></script>
 

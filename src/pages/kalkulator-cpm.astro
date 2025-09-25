@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import AdSlot from '../components/AdSlot.astro';
-const pageTitle = "Kalkulator Kalorii (BMR, CPM) | Licz.me";
-const pageDesc = "Oblicz swoje dzienne zapotrzebowanie kaloryczne. Sprawdź swoją podstawową (BMR) i całkowitą (CPM) przemianę materii, aby kontrolować wagę.";
+const pageTitle = "Kalkulator Zapotrzebowania Kalorycznego (CPM i BMR) | Licz.me";
+const pageDesc = "Oblicz swoje dzienne zapotrzebowanie kaloryczne (CPM) i podstawową przemianę materii (BMR). Dowiedz się, ile kalorii potrzebujesz, aby utrzymać, zredukować lub zwiększyć wagę.";
 ---
 <Layout title={pageTitle} description={pageDesc}>
     <article>
@@ -68,3 +68,4 @@ const pageDesc = "Oblicz swoje dzienne zapotrzebowanie kaloryczne. Sprawdź swoj
         <AdSlot id="calculator-3" />
     </article>
 </Layout>
+<script src="/src/scripts/calculators/cpm.js"></script>

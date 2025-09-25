@@ -1,32 +1,32 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import AdSlot from '../components/AdSlot.astro';
-const pageTitle = "Kalkulator BMI: Oblicz Wskaźnik Masy Ciała Online | Licz.me";
-const pageDesc = "Sprawdź swoje BMI online. Wprowadź wagę i wzrost, aby poznać swój wskaźnik masy ciała i jego interpretację. Prosty i szybki kalkulator.";
+const pageTitle = "Kalkulator BMI: Oblicz swój wskaźnik masy ciała | Licz.me";
+const pageDesc = "Dokładny kalkulator BMI online. Oblicz swój wskaźnik masy ciała (Body Mass Index), sprawdź, co oznacza Twój wynik i dowiedz się, jak utrzymać prawidłową wagę.";
 ---
 <Layout title={pageTitle} description={pageDesc}>
     <article>
         <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Kalkulator BMI: Oblicz Swój Wskaźnik Masy Ciała</h1>
-        <p class="text-lg text-slate-600 mb-6">Sprawdź, czy Twoja waga jest w normie. Wprowadź swój wzrost i wagę, aby obliczyć wskaźnik BMI (Body Mass Index) i poznać interpretację wyniku.</p>
+        <p class="text-lg text-slate-600 mb-6">Nasz kalkulator BMI to proste narzędzie, które pomoże Ci szybko ocenić, czy Twoja waga jest w normie. Wprowadź swoją wagę w kilogramach i wzrost w centymetrach, aby obliczyć wskaźnik masy ciała (BMI) i zrozumieć, co oznacza Twój wynik.</p>
         
         <AdSlot id="calculator-1" />
 
         <form id="kalkulator-bmi-form" class="bg-white p-6 rounded-lg shadow-md">
-            <div class="grid md:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-3 gap-6 items-end">
                 <div>
-                    <label for="bmi-waga" class="block text-sm font-medium text-slate-700 mb-1">Waga (kg)</label>
+                    <label for="bmi-waga" class="block text-sm font-medium text-slate-700 mb-1">Twoja waga (kg)</label>
                     <input type="number" id="bmi-waga" class="w-full p-3 border border-slate-300 rounded-md" placeholder="np. 70" required>
                 </div>
                 <div>
-                    <label for="bmi-wzrost" class="block text-sm font-medium text-slate-700 mb-1">Wzrost (cm)</label>
+                    <label for="bmi-wzrost" class="block text-sm font-medium text-slate-700 mb-1">Twój wzrost (cm)</label>
                     <input type="number" id="bmi-wzrost" class="w-full p-3 border border-slate-300 rounded-md" placeholder="np. 180" required>
                 </div>
-                <div class="flex items-end">
+                <div>
                     <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-md hover:bg-indigo-700">Oblicz BMI</button>
                 </div>
             </div>
             <div id="bmi-wynik" class="mt-6 border-t pt-6 hidden">
-                <h3 class="text-xl font-bold text-slate-800 mb-2">Twój wskaźnik BMI:</h3>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">Twój wskaźnik BMI wynosi:</h3>
                 <p class="text-4xl font-extrabold text-indigo-600" id="bmi-wynik-wartosc"></p>
                 <p class="text-lg font-medium mt-2" id="bmi-wynik-interpretacja"></p>
             </div>
@@ -34,15 +34,36 @@ const pageDesc = "Sprawdź swoje BMI online. Wprowadź wagę i wzrost, aby pozna
 
         <AdSlot id="calculator-2" />
 
-        <h2 class="text-2xl font-bold text-slate-800 mt-12 mb-4">Interpretacja wyników BMI</h2>
-        <p class="text-slate-600 mb-4">Wskaźnik BMI to proste narzędzie przesiewowe, które pomaga ocenić, czy Twoja masa ciała jest odpowiednia w stosunku do wzrostu. Poniżej znajdują się standardowe zakresy wartości BMI dla dorosłych:</p>
-        <ul class="list-disc list-inside text-slate-600 space-y-1">
-            <li>Poniżej 18,5 – niedowaga</li>
-            <li>18,5 – 24,9 – waga prawidłowa</li>
-            <li>25,0 – 29,9 – nadwaga</li>
-            <li>30,0 i powyżej – otyłość</li>
-        </ul>
+        <h2 class="text-2xl font-bold text-slate-800 mt-12 mb-4">Czym jest wskaźnik BMI?</h2>
+        <p class="text-slate-600 mb-4">Wskaźnik masy ciała (z ang. Body Mass Index, w skrócie BMI) to współczynnik obliczany na podstawie masy ciała i wzrostu. Jest to prosta i szeroko stosowana metoda oceny, czy masa ciała jest prawidłowa. Mimo swojej prostoty, BMI jest użytecznym narzędziem przesiewowym do identyfikacji potencjalnych problemów zdrowotnych związanych z niedowagą, nadwagą lub otyłością u dorosłych.</p>
+
+        <h2 class="text-2xl font-bold text-slate-800 mt-8 mb-4">Jak interpretować wyniki BMI?</h2>
+        <p class="text-slate-600 mb-4">Wynik BMI klasyfikuje się do jednej z kilku kategorii. Poniżej znajduje się tabela z zakresami wartości BMI według Światowej Organizacji Zdrowia (WHO) dla osób dorosłych:</p>
+
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+                <thead class="bg-slate-100">
+                    <tr>
+                        <th class="p-3 font-bold uppercase text-slate-600 text-sm border border-slate-200">Zakres BMI</th>
+                        <th class="p-3 font-bold uppercase text-slate-600 text-sm border border-slate-200">Interpretacja</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-200">Poniżej 18,5</td><td class="p-3 border border-slate-200">Niedowaga</td></tr>
+                    <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-200">18,5 – 24,9</td><td class="p-3 border border-slate-200">Waga prawidłowa</td></tr>
+                    <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-200">25,0 – 29,9</td><td class="p-3 border border-slate-200">Nadwaga</td></tr>
+                    <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-200">30,0 – 34,9</td><td class="p-3 border border-slate-200">Otyłość I stopnia</td></tr>
+                    <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-200">35,0 – 39,9</td><td class="p-3 border border-slate-200">Otyłość II stopnia (kliniczna)</td></tr>
+                    <tr class="hover:bg-slate-50"><td class="p-3 border border-slate-200">Powyżej 40,0</td><td class="p-3 border border-slate-200">Otyłość III stopnia (skrajna)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="text-2xl font-bold text-slate-800 mt-8 mb-4">Ograniczenia kalkulatora BMI</h2>
+        <p class="text-slate-600 mb-4">Należy pamiętać, że wskaźnik BMI nie jest doskonały. Nie rozróżnia on masy mięśniowej od masy tłuszczowej. Oznacza to, że osoby o bardzo rozbudowanej muskulaturze (np. sportowcy) mogą uzyskać wynik wskazujący na nadwagę, mimo niskiego poziomu tkanki tłuszczowej. Kalkulator BMI jest przeznaczony głównie dla dorosłych i nie powinien być stosowany do oceny wagi dzieci i młodzieży, dla których istnieją specjalne siatki centylowe.</p>
+        <p class="text-slate-600">Wynik BMI należy traktować jako wskazówkę. W przypadku jakichkolwiek wątpliwości co do swojego zdrowia, zawsze warto skonsultować się z lekarzem lub dietetykiem.</p>
 
         <AdSlot id="calculator-3" />
     </article>
 </Layout>
+<script src="/src/scripts/calculators/bmi.js"></script>
